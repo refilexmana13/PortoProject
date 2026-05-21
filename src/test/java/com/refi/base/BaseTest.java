@@ -12,7 +12,7 @@ public class BaseTest {
 
     public static WebDriver driver;
 
-    protected static String baseUrl = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+    public static String baseUrl = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
 
     // Method untuk inisialisasi WebDriver
     protected void getDriver(){
