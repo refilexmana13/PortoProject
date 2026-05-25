@@ -16,6 +16,11 @@ public class Hooks extends  BaseTest {
 
     @Before ("@requestLogin")
     public void login(){
+
+        if(BaseTest.driver==null){
+            getDriver();
+            BaseTest.driver.get(baseUrl);
+        }
         System.out.println("Performing login......");
         LoginPage loginPage = new LoginPage();
         loginPage.enterUsername("Admin");

@@ -2,8 +2,8 @@ package com.refi.stepdefinitions;
 
 import com.refi.base.BaseTest;
 import com.refi.pages.AddEmployeePage;
+import com.refi.pages.DashboardPage;
 import com.refi.pages.LoginPage;
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,33 +14,16 @@ public class AddEmpSteps extends BaseTest {
 
     protected AddEmployeePage addEmployeePage = new AddEmployeePage();
 
-    @Given("I am logged in as an Admin")
-    public void iAmLoggedInAsAnAdmin() {
-        LoginPage loginPage = new LoginPage();
-        loginPage.enterUsername("admin");
-        loginPage.enterPassword("admin123");
-        loginPage.clickButtonLogin();
-    }
-
-    @And("I click PIM")
-    public void iClickPIM() {
-        addEmployeePage.clickPIMMenu();
-
-    }
-
     @Given("I am on the Add Employee page")
     public void iAmOnTheAddEmployeePage() {
+        DashboardPage dashboardPage = new DashboardPage();
+        dashboardPage.navigateTOAddEmployee();
 
-    }
-
-    @And("I click add")
-    public void iClickAdd() {
-        addEmployeePage.clickAddEmployeeButton();
     }
 
     @When("I enter first name {string}")
     public void iEnterFirstName(String firstName) {
-        addEmployeePage.enterFirstName(firstName + " " + System.currentTimeMillis());
+        addEmployeePage.enterFirstName(firstName);
 
     }
 
