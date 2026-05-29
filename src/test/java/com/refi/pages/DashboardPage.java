@@ -16,6 +16,11 @@ public class DashboardPage extends BasePage {
         driver.get(BaseTest.baseUrl.replace("/auth/login", "/pim/addEmployee"));
     }
 
+    //navigasi ke search Employee
+    public void navigateToSearchEmployee(){
+        driver.get(BaseTest.baseUrl.replace("/auth/login", "/pim/viewEmployeeList"));
+    }
+
     //cek apakah sudah di halaman Dashboard
     public boolean isOnDasgboard(){
         return countElement(dashboardHeader) > 0;

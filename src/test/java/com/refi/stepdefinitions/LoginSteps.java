@@ -1,6 +1,7 @@
 package com.refi.stepdefinitions;
 
 import com.refi.base.BaseTest;
+import com.refi.pages.DashboardPage;
 import com.refi.pages.LoginPage;
 import io.cucumber.java.Before;
 import io.cucumber.java.PendingException;
@@ -31,10 +32,11 @@ public class LoginSteps extends BaseTest {
 
     @Then("I should be redirected to the dashboard")
     public void iShouldBeRedirectedToTheDashboard() {
+        DashboardPage dashboardPage = new DashboardPage();
         String currentUrl = loginPage.getCurrentUrl();
 
         System.out.println("currentUrl: " + currentUrl);
-
+        dashboardPage.isOnDasgboard();
         Assert.assertTrue("Expected Dashboard URL, but got: " + currentUrl, currentUrl.contains("/dashboard"));
     }
 
