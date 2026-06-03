@@ -24,7 +24,7 @@ jobs:
           run: chmod +x gradlew
 
         - name: Run regression test
-          run: ./gradlew regression
+          run: ./gradlew regression --info
 
         - name: Run smoke test
           run: ./gradlew smoke --info
