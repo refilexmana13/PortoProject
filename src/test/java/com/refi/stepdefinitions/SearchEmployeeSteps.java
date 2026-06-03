@@ -19,8 +19,8 @@ public class SearchEmployeeSteps extends BaseTest {
 
     }
 
-    @When("I enter {string} in the search name field")
-    public void iEnterInTheSearchNameField(String inputName) {
+    @When("I enter {string} in the search ID field")
+    public void iEnterInTheSearchIDField(String inputName) {
         searchEmployeePage.enterSearchName(inputName);
     }
 
