@@ -6,7 +6,7 @@ import com.refi.pages.SearchEmployeePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class SearchEmployeeSteps extends BaseTest {
 
@@ -19,11 +19,6 @@ public class SearchEmployeeSteps extends BaseTest {
 
     }
 
-    @When("I enter {string} in the search ID field")
-    public void iEnterInTheSearchIDField(String inputName) {
-        searchEmployeePage.enterSearchName(inputName);
-    }
-
     @And("I click on the Search button")
     public void iClickOnTheSearchButton() {
         searchEmployeePage.clickSearchButton();
@@ -31,6 +26,8 @@ public class SearchEmployeeSteps extends BaseTest {
 
     @Then("I should see employee data is displayed in the search results")
     public void iShouldSeeEmployeeDataIsDisplayedInTheSearchResults() {
+        Assert.assertTrue("No employee data found in search results",
+                searchEmployeePage.getSearchResultsCount() > 0);
         searchEmployeePage.getSearchResultsCount();
     }
 }
