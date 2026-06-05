@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 
 public class SearchEmployeePage extends BasePage {
 
-    private final By btnSearch = By.cssSelector("button[type='submit']");
+    private final By btnSearch = By.xpath("//button[@type='submit' and normalize-space()='Search']");
     private final By employeeCard = By.xpath("//div[contains(@class, 'orangehrm-container')]");
 
 

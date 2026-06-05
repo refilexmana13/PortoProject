@@ -41,6 +41,7 @@ public class BaseTest {
         if(isCI){
             //mode CI
             options.addArguments("--headless");
+            options.addArguments("--window-size=1920,1080"); //tambahan
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
             System.out.println("Running CI mode Headless");
