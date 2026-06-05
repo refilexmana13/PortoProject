@@ -11,6 +11,7 @@ public class DashboardPage extends BasePage {
 
     //locator untuk verifikasi apakah sudah di Halaman Dashboard
     private final By dashboardHeader = By.xpath("//h6[text()='Dashboard']");
+    private final By btnSearch = By.xpath("//button[@type='submit' and normalize-space()='Search']");
 
     //navigasi ke add Employee
     public void navigateTOAddEmployee(){
@@ -21,6 +22,7 @@ public class DashboardPage extends BasePage {
     //navigasi ke search Employee
     public void navigateToSearchEmployee(){
         driver.get(BaseTest.baseUrl.replace("/auth/login", "/pim/viewEmployeeList"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(btnSearch));
     }
 
     //cek apakah sudah di halaman Dashboard
