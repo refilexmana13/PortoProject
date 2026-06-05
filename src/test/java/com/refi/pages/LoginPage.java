@@ -1,7 +1,9 @@
 package com.refi.pages;
 
 import com.refi.base.BasePage;
+import com.refi.base.BaseTest;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static com.refi.base.BaseTest.driver;
 
@@ -26,6 +28,7 @@ public class LoginPage extends BasePage {
 
     public void clickButtonLogin(){
         click(loginButton);
+        wait.until(ExpectedConditions.urlContains("/dashboard"));
     }
 
     public String getErrorMessage(){

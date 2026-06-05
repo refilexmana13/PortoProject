@@ -28,5 +28,7 @@ public class DashboardPage extends BasePage {
     //cek apakah sudah di halaman Dashboard
     public boolean isOnDasgboard(){
         return countElement(dashboardHeader) > 0;
+
+
     }
 }
