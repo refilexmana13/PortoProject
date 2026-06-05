@@ -13,7 +13,7 @@ public class LoginPage extends BasePage {
     private final By loginButton = By.cssSelector("button[type='submit']");
     private final By errorMessage = By.cssSelector(".oxd-alert-content-text");
     private final By requiredUsernameMessage = By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/span");
-    private final By requiredPasswordMessage = By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[2]/div/span");
+    private final By requiredPasswordMessage = By.xpath("//span[text()='Required']");
 
     //Method untuk melakukan login
     public void enterUsername(String username){
